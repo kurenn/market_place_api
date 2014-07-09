@@ -6,8 +6,6 @@ describe Api::V1::SessionsController do
 
     before(:each) do
       @user = FactoryGirl.create :user
-      credentials = { email: @user.email, password: "12345678" }
-      post :create, { session: credentials }
     end
 
     context "when the credentials are correct" do
@@ -25,7 +23,7 @@ describe Api::V1::SessionsController do
       it { should respond_with 200 }
     end
 
-    context "when the credentials al incorrect" do
+    context "when the credentials are incorrect" do
 
       before(:each) do
         credentials = { email: @user.email, password: "invalidpassword" }
