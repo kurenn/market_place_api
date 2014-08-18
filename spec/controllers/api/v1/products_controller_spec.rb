@@ -50,7 +50,7 @@ describe Api::V1::ProductsController do
       before(:each) do
         @user = FactoryGirl.create :user
         3.times { FactoryGirl.create :product, user: @user }
-        get :index, ids: @user.product_ids
+        get :index, product_ids: @user.product_ids
       end
 
       it "returns just the products that belong to the user" do

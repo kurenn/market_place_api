@@ -3,8 +3,7 @@ class Api::V1::ProductsController < ApplicationController
   respond_to :json
 
   def index
-    products = params[:ids].present? ? Product.find(params[:ids]) : Product.all
-    respond_with products
+    respond_with Product.search(params)
   end
 
   def show
