@@ -1,0 +1,7 @@
+Order: #<%= @order.id %>
+
+You ordered <%= @order.products.count %> products:
+
+<% @order.products.each do |product| %>
+  <%= product.title %> - <%= number_to_currency product.price %>
+<% end %>
