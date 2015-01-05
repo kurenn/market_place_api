@@ -1,4 +1,4 @@
-require 'api_contraints'
+require 'api_constraints'
 
 MarketPlaceApi::Application.routes.draw do
   # Api definition
