@@ -11,9 +11,11 @@ class Api::V1::OrdersController < ApplicationController
   end
 
   def create
-    order = current_user.orders.build(order_params)
+    order = current_user.orders.build
+    order.build_placements_with_product_ids_and_quantities(params[:order][:product_ids_and_quantities])
 
     if order.save
+      order.reload #we reload the object so the response displays the product objects
       OrderMailer.send_confirmation(order).deliver
       render json: order, status: 201, location: [:api, current_user, order]
     else
@@ -21,9 +23,4 @@ class Api::V1::OrdersController < ApplicationController
     end
   end
 
-  private
-
-    def order_params
-      params.require(:order).permit(:product_ids => [])
-    end
 end
