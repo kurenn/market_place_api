@@ -129,7 +129,7 @@ DEPENDENCIES
   ffaker
   jquery-rails
   rails (= 4.0.2)
-  rspec-rails
+  rspec-rails (= 2.14.2)
   sass-rails (~> 4.0.0)
   sdoc
   sqlite3
