@@ -32,9 +32,12 @@ end
 
 group :test do
   gem "rspec-rails"
+  gem "shoulda-matchers"
+end
+
+group :development, :test do
   gem "factory_girl_rails"
   gem 'ffaker'
-  gem "shoulda-matchers"
 end
 
 gem "devise"
