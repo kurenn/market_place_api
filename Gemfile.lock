@@ -77,7 +77,7 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
-    ffaker (1.24.0)
+    ffaker (2.0.0)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
     fssm (0.2.10)
